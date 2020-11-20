@@ -1,0 +1,49 @@
+{
+  "author": "Isaac Scarrott",
+  "name": "jgqls",
+  "description": "JSON jgqls schema to GraphQL schema string",
+  "version": "0.0.2",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/isaac-scarrott/jgqls#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isaac-scarrott/jgqls.git"
+  },
+  "keywords": [
+    "GraphQL",
+    "Schema",
+    "JSON",
+    "Generate",
+    "Generation"
+  ],
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "scripts": {
+    "build": "rm -rf ./dist && tsc",
+    "lint": "eslint '*/**/*.ts' --quiet --fix",
+    "format": "prettier -w */**/*.ts",
+    "publisher": "npm run build && npm version patch && npm publish"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix"
+    ]
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.8.1",
+    "@typescript-eslint/parser": "^4.8.1",
+    "eslint": "^7.13.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "lint-staged": "^10.5.1",
+    "prettier": "^2.2.0",
+    "typescript": "^4.0.5",
+    "husky": "^4.3.0"
+  },
+  "dependencies": {}
+}
