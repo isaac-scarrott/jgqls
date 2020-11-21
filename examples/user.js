@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const jgqls = require('../packages/parse/index')
-const { jgqlsParse } = require('../packages/parse/index')
+const jgqls = require('../src/index')
+const { jgqlsParse } = require('../src/index')
 
 const userPreferences = {
   company: jgqls.String,
