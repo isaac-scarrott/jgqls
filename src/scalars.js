@@ -1,11 +1,10 @@
-import { valueKey } from '../random-keys'
+const { valueKey } = require('./keys')
 
-const baseScalarType = (graphqlType: string) => {
-  const value = graphqlType
+const baseScalarType = (graphqlScalarType) => {
+  const value = graphqlScalarType
 
   return {
-    '!': `${value}!`,
-    required: `${value}!`,
+    '!': { [valueKey]: `${value}!` },
     [valueKey]: value,
   }
 }
@@ -20,4 +19,4 @@ const scalars = {
   JSON: baseScalarType('JSON'),
 }
 
-export { scalars, baseScalarType }
+module.exports = scalars

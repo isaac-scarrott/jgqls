@@ -2,7 +2,7 @@
   "author": "Isaac Scarrott",
   "name": "jgqls",
   "description": "JSON jgqls schema to GraphQL schema string",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "Apache-2.0",
   "homepage": "https://github.com/isaac-scarrott/jgqls#readme",
   "repository": {
@@ -16,13 +16,11 @@
     "Generate",
     "Generation"
   ],
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "src/index.js",
   "scripts": {
-    "build": "rm -rf ./dist && tsc",
-    "lint": "eslint '*/**/*.ts' --quiet --fix",
-    "format": "prettier -w */**/*.ts",
-    "publisher": "npm run build && npm version patch --no-git-tag-version && npm publish"
+    "lint": "eslint '*/**/*.js' --quiet --fix",
+    "format": "prettier -w */**/*.js",
+    "publisher": "npm version patch --no-git-tag-version && npm publish"
   },
   "husky": {
     "hooks": {
