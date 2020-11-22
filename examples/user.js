@@ -16,6 +16,7 @@ const user = {
   password: jgqls.String,
   preferences: [userPreferences],
   plan: jgqls.String,
+  pageInfo: jgqls.PageInfo,
 }
 
 const UserType = jgqls.type({ UserType: user })

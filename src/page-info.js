@@ -4,8 +4,8 @@ const scalars = require('./scalars')
 const basePageInfo = {
   startCursor: scalars.String,
   endCursor: scalars.String,
-  hasNextPage: scalars.Boolean.required,
-  hasPreviousPage: scalars.Boolean.required,
+  hasNextPage: scalars.Boolean['!'],
+  hasPreviousPage: scalars.Boolean['!'],
 }
 
-module.exports = { PageInfo: basePageInfo }
+module.exports = basePageInfo
