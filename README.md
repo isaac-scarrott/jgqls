@@ -24,7 +24,7 @@ const user = {
 }
 
 const UserType = jgqls.type({ UserType: { ...user, pageInfo: jgqls.PageInfo } })
-const UserInput = jgqls.input({ UserInput: { ...user } })
+const UserInput = jgqls.input({ UserInput: user })
 
 console.log(jgqlsParse([UserType, UserInput]))
 ```
