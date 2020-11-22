@@ -23,10 +23,10 @@ const user = {
   plan: jgqls.String,
 }
 
-const UserType = jgqls.type({ UserType: user })
-const UserInput = jgqls.input({ UserInput: user })
+const UserType = jgqls.type({ UserType: { ...user, pageInfo: jgqls.PageInfo } })
+const UserInput = jgqls.input({ UserInput: { ...user } })
 
-jgqlsParse([UserType, UserInput])
+console.log(jgqlsParse([UserType, UserInput]))
 ```
 
 Example Output
@@ -35,6 +35,13 @@ Example Output
 type PreferencesType {
   company: String
   telephone: String
+}
+
+type PageinfoType {
+  startCursor: String
+  endCursor: String
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
 }
 
 type UserType {
@@ -46,6 +53,7 @@ type UserType {
   password: String
   preferences: [PreferencesType]
   plan: String
+  pageInfo: PageinfoType
 }
 
 input PreferencesInput {

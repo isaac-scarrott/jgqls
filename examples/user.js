@@ -16,10 +16,9 @@ const user = {
   password: jgqls.String,
   preferences: [userPreferences],
   plan: jgqls.String,
-  pageInfo: jgqls.PageInfo,
 }
 
-const UserType = jgqls.type({ UserType: user })
-const UserInput = jgqls.input({ UserInput: user })
+const UserType = jgqls.type({ UserType: { ...user, pageInfo: jgqls.PageInfo } })
+const UserInput = jgqls.input({ UserInput: { ...user } })
 
 console.log(jgqlsParse([UserType, UserInput]))
